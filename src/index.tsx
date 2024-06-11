@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const DEFAULT = {
   CIRCLE_SIZE: '8px',
-  GLOW_COLOR: 'rgb(155, 46, 199)',
+  GLOW_COLOR: 'rgb(155, 46, 199)', // Purple
 } as const;
 
 declare const __s: unique symbol;
@@ -17,7 +17,7 @@ export type Pixel = Brand<'Pixel', string>;
 type DotProps = {
   glowColor?: RGB;
   circleSize?: Pixel;
-  delay?: string;
+  delay?: number; // in seconds
 };
 
 const Dot = styled.div<DotProps>`
@@ -29,7 +29,7 @@ const Dot = styled.div<DotProps>`
   background-color: ${(props) => props.glowColor || DEFAULT.GLOW_COLOR};
   box-shadow: 0 0 20px ${(props) => props.glowColor || DEFAULT.GLOW_COLOR};
   animation: loading 1.5s ease-in-out infinite;
-  animation-delay: ${(props) => props.delay || '0s'};
+  animation-delay: ${(props) => `${props.delay}s` || '0s'};
 
   @keyframes loading {
     0%,
@@ -60,9 +60,9 @@ const Loading: React.FC<LoaderProps> = ({ glowColor, circleSize }) => {
   const renderDivs = () => {
     return (
       <>
-        <Dot glowColor={glowColor} circleSize={circleSize} delay="0s" />
-        <Dot glowColor={glowColor} circleSize={circleSize} delay="0.2s" />
-        <Dot glowColor={glowColor} circleSize={circleSize} delay="0.3s" />
+        <Dot glowColor={glowColor} circleSize={circleSize} delay={0} />
+        <Dot glowColor={glowColor} circleSize={circleSize} delay={0.2} />
+        <Dot glowColor={glowColor} circleSize={circleSize} delay={0.3} />
       </>
     );
   };
