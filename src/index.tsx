@@ -6,7 +6,21 @@ const DEFAULT = {
   GLOW_COLOR: 'rgb(155, 46, 199)',
 } as const;
 
-const Dot = styled.div<{ glowColor?: RGB; circleSize?: Pixel; delay?: string }>`
+declare const __s: unique symbol;
+type Brand<N, T> = T & {
+  [__s]: N;
+};
+
+export type RGB = Brand<'RBG', string>;
+export type Pixel = Brand<'Pixel', string>;
+
+type DotProps = {
+  glowColor?: RGB;
+  circleSize?: Pixel;
+  delay?: string;
+};
+
+const Dot = styled.div<DotProps>`
   width: ${(props) => props.circleSize || DEFAULT.CIRCLE_SIZE};
   height: ${(props) => props.circleSize || DEFAULT.CIRCLE_SIZE};
   border-radius: 50%;
@@ -36,18 +50,7 @@ const Dot = styled.div<{ glowColor?: RGB; circleSize?: Pixel; delay?: string }>`
   }
 `;
 
-declare const __s: unique symbol;
-type _Brand<N, T> = T & {
-  [__s]: N;
-};
-
-export type RGB = _Brand<'RBG', string>;
-export type Pixel = _Brand<'Pixel', string>;
-
-interface DotsProps {
-  glowColor?: RGB;
-  circleSize?: Pixel;
-}
+type DotsProps = Omit<DotProps, 'delay'>;
 
 export interface LoaderProps
   extends React.ButtonHTMLAttributes<HTMLDivElement>,
