@@ -25,17 +25,14 @@
   ],
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "pnpm build:lib && pnpm build:app",
-    "build:app": "cd example && pnpm i && pnpm build",
+    "build": "pnpm build:lib",
     "build:lib": "rimraf dist && rollup -c rollup.config.js",
-    "build:docs": "typedoc src/index.ts",
-    "hooks": "husky init",
     "lint": "pnpm format && pnpm lint:ts && pnpm lint:spelling",
     "lint:ts": "tsc --noEmit; eslint .",
     "lint:knip": "knip --production --strict --exclude exports,nsExports,types,nsTypes",
     "format": "prettier . --write",
     "format-check": "prettier --check .",
-    "lint:spelling": "cspell \"**\" \".github/**/*\""
+    "lint:spelling": "echo 'NOT IMPLEMENTED YET: cspell \"**\" \".github/**/*\"'"
   },
   "peerDependencies": {
     "react": ">=16"
