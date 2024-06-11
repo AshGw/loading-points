@@ -1,11 +1,15 @@
-### Installation 
-
+ 
+## Installation 
+**npm**
+```bash
+npm i ts-roids
 ```
-npm i loading-points
+**pnpm**
+```bash
+pnpm i ts-roids
 ```
 
-### Usage 
-
+## Usage 
 ```tsx
 import Loading from 'loading-points';
 
@@ -20,5 +24,5 @@ function LoadingScreen() {
 export default LoadingScreen;
 ```
 
-### License 
-MIT
+## License 
+[MIT](https://github.com/AshGw/loading-points/blob/main/LICENSE)
