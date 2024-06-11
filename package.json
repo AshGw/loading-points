@@ -116,5 +116,6 @@
   },
   "dependencies": {
     "styled-components": "6.1.11"
-  }
+  },
+  "packageManager": "pnpm@8.14.0"
 }
