@@ -2,11 +2,11 @@
 ## Installation 
 **npm**
 ```bash
-npm i ts-roids
+npm i loading-points
 ```
 **pnpm**
 ```bash
-pnpm i ts-roids
+pnpm i loading-points
 ```
 
 ## Usage 
