@@ -30,14 +30,16 @@
     "lint": "pnpm format && pnpm lint:ts && pnpm lint:spelling",
     "lint:ts": "tsc --noEmit; eslint .",
     "lint:knip": "knip --production --strict --exclude exports,nsExports,types,nsTypes",
+    "hooks": "husky init",
     "format": "prettier . --write",
     "format-check": "prettier --check .",
-    "lint:spelling": "echo 'NOT IMPLEMENTED YET: cspell \"**\" \".github/**/*\"'"
+    "lint:spelling": "echo 'NOT IMPLEMENTED YET: cspell \"**\" \".github/**/*\"'",
+    "prepare": "husky"
   },
   "peerDependencies": {
     "react": ">=16"
   },
-   "devDependencies": {
+  "devDependencies": {
     "@commitlint/cli": "18.6.0",
     "@commitlint/config-conventional": "18.6.0",
     "@cspell/dict-cryptocurrencies": "5.0.0",
