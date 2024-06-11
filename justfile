@@ -1,4 +1,4 @@
-alias s:= :setup
+alias s:= setup
 
 @setup:
     #!/bin/zsh
