@@ -1,14 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const DEFAULT = {
+  CIRCLE_SIZE: '8px',
+  GLOW_COLOR: 'rgb(155, 46, 199)',
+} as const;
+
 const Dot = styled.div<{ glowColor?: RGB; circleSize?: Pixel; delay?: string }>`
-  width: ${(props) => props.circleSize || '8px'};
-  height: ${(props) => props.circleSize || '8px'};
+  width: ${(props) => props.circleSize || DEFAULT.CIRCLE_SIZE};
+  height: ${(props) => props.circleSize || DEFAULT.CIRCLE_SIZE};
   border-radius: 50%;
   display: inline-block;
   margin: 0.5rem;
-  background-color: ${(props) => props.glowColor || 'rgb(155, 46, 199)'};
-  box-shadow: 0 0 20px ${(props) => props.glowColor || 'rgb(155, 46, 199)'};
+  background-color: ${(props) => props.glowColor || DEFAULT.GLOW_COLOR};
+  box-shadow: 0 0 20px ${(props) => props.glowColor || DEFAULT.GLOW_COLOR};
   animation: loading 1.5s ease-in-out infinite;
   animation-delay: ${(props) => props.delay || '0s'};
 
@@ -24,9 +29,9 @@ const Dot = styled.div<{ glowColor?: RGB; circleSize?: Pixel; delay?: string }>`
     50% {
       transform: scale(1);
       box-shadow:
-        0 0 20px ${(props) => props.glowColor || 'rgb(155, 46, 199)'},
-        0 0 30px ${(props) => props.glowColor || 'rgb(155, 46, 199)'},
-        0 0 40px ${(props) => props.glowColor || 'rgb(155, 46, 199)'};
+        0 0 20px ${(props) => props.glowColor || DEFAULT.GLOW_COLOR},
+        0 0 30px ${(props) => props.glowColor || DEFAULT.GLOW_COLOR},
+        0 0 40px ${(props) => props.glowColor || DEFAULT.GLOW_COLOR};
     }
   }
 `;
