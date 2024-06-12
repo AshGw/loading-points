@@ -1,4 +1,5 @@
- 
+## Why
+So, I was going through some website today and noticed they really do have some ugly loading dots animations that have a poor contrast with the background, and they use it everywhere instead of a skeleton, irritating af! Then hours later I saw another site with the same animating dots that looked even uglier. So, as a call to the universe, I created this package this afternoon for all you folks out there struggling to get some good-looking glowing 3-dot pulsing animations.
 ## Installation 
 **npm**
 ```bash
